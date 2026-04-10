@@ -6,4 +6,10 @@
       apt:
         upgrade: yes
         update_cache: yes
-      ignore_errors: yes  # This allows the playbook to finish even if one package fails
+      # This allows the playbook to "succeed" even if one mirror is 404ing
+      ignore_errors: yes
+
+    - name: Clean up old packages
+      apt:
+        autoremove: yes
+        purge: yes
