@@ -6,3 +6,4 @@
       apt:
         upgrade: yes
         update_cache: yes
+      ignore_errors: yes  # This allows the playbook to finish even if one package fails
